@@ -14,14 +14,14 @@ error = pickle.load(open("yarnrmse.pkl", 'rb'))
 zData = pickle.load(open("yarnzData.pkl", 'rb'))
 trending = pickle.load(open("yarntrending.pkl",'rb'))
 
+
 #@app.route('/index')
 # Home page
 @app.route('/')
 def index():
     yarn_names = list(predictions.keys())
-    plot_url = ''
+    plot_url = 'static/select_yarn.png'
     error_output = ''
-    #plot_url, error_output = plotyarn(yarn_names[0],predictions,fcast,error,zData)
     return render_template("index.html", yarn_names=yarn_names, plot_url = plot_url, error_output = error_output) 
 
 # "results page"
