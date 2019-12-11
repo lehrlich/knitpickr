@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <style>
+      * {font-family: Arial, Helvetica, sans-serif;}
+    </style>
+  </head>
+<body>
+
+<h1 style = 'font-size: 40pt;'>knitpickr: <i>the yarn forecasting tool</i></h1>
+<!---- Table goes here--->
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:none;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-fymr{font-weight:bold;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+
+<!--- Dropdown box goes here ---->
+<p style = 'font-size: 15pt;'>
+Select a yarn:
+</p>
+<form name='yarn_selection_form' method='POST' style = 'font-size: 15pt;'>
+<select name="yarn_selection" style = 'font-size: 15pt;'>
+  {% for yarn in yarn_names %}
+    <option value="{{yarn}}">{{yarn}}</option>
+  {% endfor %}
+</select>
+<button type = "submit" style = 'font-size: 15pt;'>Yarn forecast</button>
+</form>
+
+
+
+<p style = 'font-size: 22pt;'>
+{{(yarn_selection)}}
+</p>
+<p style = 'color: {{statement_color}};font-size:20pt ' >
+{{yarn_statement}} 
+</p>
+
+<br>
+
+<img width=800px src='{{plot_url}}'>
+</p>
+<br>
+<!--<h2>Trend Rankings</h2>-->
+<table class="tg" style = 'border-style:none;'>
+  <tr>
+    <th class="tg-fymr" ></th>
+    <th class="tg-fymr"style = 'font-size: 25pt;'>STOCK</th>
+    <th class="tg-0lax"><span style="font-weight:700"></span></th>
+    <th class="tg-0lax"style = 'font-size: 25pt;'><span style="font-weight:bold">DON'T STOCK</span></th>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><img width=120px src='static/garnstudio_drops_kid_silk.png'><br></td>
+    <td class="tg-0lax">Garnstudio DROPS Kid-Silk<br>Weight: Lace<br>Fiber: 75% Goat Mohair/25% Silk<br><p style = 'color: green;font-size:20pt '>+60.2%/year</p> </td>
+    <td class="tg-0lax"><img width=120px src='static/tosh_merino_light.png'></td>
+    <td class="tg-0lax">madelinetosh Tosh Merino Light<br>Weight: Fingering<br>Fiber: 100% Merino Wool<br><p style = 'color: red;font-size:20pt '>-26.8%/year</p></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><img width=120px src='static/istex_lettlopi.png'></td>
+    <td class="tg-0lax">Lettlopi Istex<br>Weight: Aran<br>Fiber: 100% Icelandic Wool<br><p style = 'color: green;font-size:20pt '>+27.9%/year</p></td>
+    <td class="tg-0lax"><img width=120px src='static/cascade_220_superwash.png'></td>
+    <td class="tg-0lax">Cascade Yarns 220 Superwash<br> Weight: Worsted<br>Fiber: 100% Wool<br><p style = 'color: red;font-size:20pt '>-24.0%/year</p></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><img width=120px src='static/malabrigo_yarn_mechita.png'></td>
+    <td class="tg-0lax">Malabrigo Yarn Mechita<br>Weight: Fingering<br>Fiber: 100% Merino Wool<br><p style = 'color: green;font-size:20pt '>+13.8%/year</p></td>
+    <td class="tg-0lax"><img width=120px src='static/garnstudio_drops_fabel.png'></td>
+    <td class="tg-0lax">Garnstudio DROPS Fabel<br>Weight: Fingering<br>Fiber: 75% Wool/25% Nylon<br><p style = 'color: red;font-size:20pt '>-23.0%/year</p></td>
+  </tr>
+</table>
+
+
+
+</body>
+</html>
